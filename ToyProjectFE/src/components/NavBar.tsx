@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 import { type RootState } from '../store/store'
 import { type UserProfileResponseDto } from '../api/users'
 import { logout } from '../api/auth'
+import { DrawerToggleButton } from './RoomDrawer'
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -32,8 +33,9 @@ export default function NavBar() {
 
   return (
     <Disclosure as="nav" className="bg-gray-800 rounded-t-lg">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
+           <DrawerToggleButton className = "mr-2 sm:mr-4 lg:mr-[100px]" />
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">

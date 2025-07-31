@@ -10,6 +10,8 @@ import { getUserProfile } from './api/users'
 import { type AppDispatch } from './store/store'
 import { type RootState } from './store/store'
 import GroupChatMakeFormPage from './pages/GroupChatMakeFormPage'
+import { GroupRoomPage } from './pages/GroupRoomPage'
+import Drawer from './components/RoomDrawer'
 
 
 const AppContent = () => {
@@ -37,11 +39,13 @@ const AppContent = () => {
   return (
     <div className="App">
       {!isLoginPage && <NavBar />}
+      {!isLoginPage && <Drawer />}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/chat-make" element={<GroupChatMakeFormPage />} />
+        <Route path="/rooms/:roomId" element={<GroupRoomPage />} />
       </Routes>
     </div>
   );
