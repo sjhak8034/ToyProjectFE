@@ -10,7 +10,6 @@ const posts = [
     href: '/chat-make',
     description:
       '다른 사람을 초대할 수 있고, 비밀 채팅방 또는 공개 채팅방을 만들 수 있습니다.',
-    datetime: '2020-03-16',
     category: { title: 'Group' },
   },
   {
@@ -19,8 +18,15 @@ const posts = [
     href: '#',
     description:
       'AI와 함께 채팅을 하며 다양한 주제에 대해 이야기해보세요.',
-    datetime: '2020-03-16',
     category: { title: 'AI' },
+  },
+  {
+    id: 3,
+    title: '채팅방에 참여하기',
+    href: '/find-rooms',
+    description:
+      '다른 사람들이 만든 채팅방에 참여하여 소통할 수 있습니다.',
+    category: { title: 'Join' },
   },
 
 ]
@@ -43,8 +49,6 @@ return (
               className="flex max-w-xl flex-col items-center justify-between cursor-pointer mx-auto"
             >
               <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime={post.datetime} className="text-gray-500">
-                </time>
                 <a
                   className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                 >

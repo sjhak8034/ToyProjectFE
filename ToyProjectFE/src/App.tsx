@@ -12,6 +12,7 @@ import { type RootState } from './store/store'
 import GroupChatMakeFormPage from './pages/GroupChatMakeFormPage'
 import { GroupRoomPage } from './pages/GroupRoomPage'
 import Drawer from './components/RoomDrawer'
+import FindRoomPage from './pages/FindRoomPage'
 
 
 const AppContent = () => {
@@ -46,6 +47,7 @@ const AppContent = () => {
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/chat-make" element={<GroupChatMakeFormPage />} />
         <Route path="/rooms/:roomId" element={<GroupRoomPage />} />
+        <Route path="/find-rooms" element={<FindRoomPage />} />
       </Routes>
     </div>
   );
