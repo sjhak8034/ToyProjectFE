@@ -11,13 +11,16 @@ import { type AppDispatch } from './store/store'
 import { type RootState } from './store/store'
 import GroupChatMakeFormPage from './pages/GroupChatMakeFormPage'
 import { GroupRoomPage } from './pages/GroupRoomPage'
-import Drawer from './components/RoomDrawer'
 import FindRoomPage from './pages/FindRoomPage'
+import RoomDrawer from './components/RoomDrawer'
+import PlayerDrawer from './components/PlayerDrawer'
 
 
 const AppContent = () => {
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
+  const isRoomPage = location.pathname.startsWith("/rooms/");
+  console.log('Current path:', location.pathname, 'isLoginPage:', isLoginPage, 'isRoomPage:', isRoomPage);
 
   const dispatch = useDispatch<AppDispatch>();
   const user = useSelector((state: RootState) => state.user);
@@ -40,7 +43,8 @@ const AppContent = () => {
   return (
     <div className="App">
       {!isLoginPage && <NavBar />}
-      {!isLoginPage && <Drawer />}
+      {!isLoginPage && <RoomDrawer />}
+      {isRoomPage && <PlayerDrawer />}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />

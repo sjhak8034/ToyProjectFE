@@ -87,14 +87,14 @@ export const GroupRoomPage = () => {
     useEffect(() => {
         const createPlayer = async () => {
             try {
-                const response = await api.get(`/user-players/exists/rooms/${roomId}`);
+                const response = await api.get(`/players/users/exists/rooms/${roomId}`);
                 console.log('플레이어 조회 완료:', response.data);
                 if (response.data) {
                     console.log('플레이어가 이미 존재합니다.');
                     // 이미 존재하면 아무 것도 하지 않음
                 } else {
                     console.log('플레이어가 존재하지 않습니다. 생성합니다.');
-                    await api.post('/user-players/rooms/' + roomId);
+                    await api.post('/players/users/rooms/' + roomId);
                     console.log('플레이어 생성 완료');
                 }
             } catch (error) {

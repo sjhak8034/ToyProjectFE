@@ -3,9 +3,9 @@ import api from "../api/auth";
 import { type RoomListItem } from "../types/room";
 
 
-export function DrawerToggleButton({ className = "" }: { className?: string }) {
+export function RoomDrawerToggleButton({ className = "" }: { className?: string }) {
     return (
-        <label htmlFor="my-drawer" className={`btn btn-white drawer-button ${className}`}>
+        <label htmlFor="room-drawer" className={`btn btn-white drawer-button ${className}`}>
             <img
                 src="/images/bubble-discussion.svg"
                 alt="Menu"
@@ -18,9 +18,8 @@ export function DrawerToggleButton({ className = "" }: { className?: string }) {
 
 
 
-export default function Drawer() {
+export default function RoomDrawer() {
     const [roomList, setRoomList] = useState<RoomListItem[]>([]);
-
     useEffect(() => {
         // Fetch room list data from API or other source
         const fetchRoomList = async () => {
@@ -33,11 +32,11 @@ export default function Drawer() {
 
     return (
         <div className="drawer">
-            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+            <input id="room-drawer" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
             </div>
             <div className="drawer-side">
-                <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                <label htmlFor="room-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
                 <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
                     <span>
                         현재 참여중인 채팅방
