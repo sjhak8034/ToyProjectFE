@@ -38,14 +38,14 @@ export default function PlayerDrawer() {
             </div>
             <div className="drawer-side">
                 <label htmlFor="player-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                <ul className=" bg-base-200 text-base-content min-h-full w-80 p-4">
                     <span>
-                        현재 참여중인 채팅방
+                        현재 참여중인 채팅방 인원
                     </span>
                     {/* Sidebar content here */}
                     {playerList.map((player) => (
-                        <li key={player.playerId} className="flex-row gap-2">
-                             <img src={player.picture} alt={player.nickname} className="size-8 rounded-full object-cover" />
+                        <li key={player.playerId} className="flex items-center gap-2 cursor-pointer hover:bg-gray-200 p-2 rounded">
+                             <img src={player.picture} alt={player.nickname} className="size-6 rounded-full object-cover" />
                             <a>{player.nickname}</a>
                         </li>
                     ))}

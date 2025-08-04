@@ -14,6 +14,7 @@ import { GroupRoomPage } from './pages/GroupRoomPage'
 import FindRoomPage from './pages/FindRoomPage'
 import RoomDrawer from './components/RoomDrawer'
 import PlayerDrawer from './components/PlayerDrawer'
+import SingleChatMakeFormPage from './pages/SingleChatMakeFormPage'
 
 
 const AppContent = () => {
@@ -50,6 +51,7 @@ const AppContent = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/chat-make" element={<GroupChatMakeFormPage />} />
+        <Route path="/single-chat-make" element={<SingleChatMakeFormPage />} />
         <Route path="/rooms/:roomId" element={<GroupRoomPage />} />
         <Route path="/find-rooms" element={<FindRoomPage />} />
       </Routes>

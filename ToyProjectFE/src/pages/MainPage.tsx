@@ -15,7 +15,7 @@ const posts = [
   {
     id: 2,
     title: 'AI와 함께하는 채팅',
-    href: '#',
+    href: '/single-chat-make',
     description:
       'AI와 함께 채팅을 하며 다양한 주제에 대해 이야기해보세요.',
     category: { title: 'AI' },
