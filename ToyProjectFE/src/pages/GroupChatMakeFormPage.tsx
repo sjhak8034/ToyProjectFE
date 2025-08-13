@@ -1,4 +1,3 @@
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../api/auth';

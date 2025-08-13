@@ -1,7 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { type RootState } from '../store/store'
 import { type UserProfileResponseDto } from '../api/users'

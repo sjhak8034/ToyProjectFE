@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, use } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import api from '../api/auth';
 import { createWebSocketClient } from '../websocket/WebSocketClient';
@@ -23,7 +23,7 @@ export const GroupRoomPage = () => {
     const [isEnd, setIsEnd] = useState(false); // 채팅 로그가 끝났는지 여부
     const [chatLogs, setChatLogs] = useState<ChatLogResponse[]>([]); // 채팅 로그 
     const [page, setPage] = useState(0); // 현재 페이지
-    const [size, setSize] = useState(100); // 페이지당 개수
+    const [size] = useState(100); // 페이지당 개수
     const prevChatLogsLengthRef = useRef<number>(0);// 이전 채팅 로그 길이
     const newChatLogsLengthRef = useRef<number>(0);// 새로운 채팅 로그 길이
     const [connected, setConnected] = useState(false);// 웹소켓 연결 상태

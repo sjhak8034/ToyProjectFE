@@ -1,10 +1,7 @@
-import { type FC } from "react";
 import "../styles/LoginPage.css";
 import "../styles/Input.css";
-import { Link } from "react-router-dom";
-import { LoginForm } from "../components/LoginForm";
 import { useNavigate } from "react-router-dom";
-import  { googleLogin, login }  from "../api/auth";
+import  { login }  from "../api/auth";
 
 export default function Example() {
   const navigate = useNavigate();

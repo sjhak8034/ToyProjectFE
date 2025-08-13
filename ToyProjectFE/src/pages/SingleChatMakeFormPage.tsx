@@ -14,8 +14,6 @@ export default function SingleChatMakeFormPage() {
 
     const data = {
       roomName: form['room-name'].value,
-      password: form['room-password'].value,
-      maxPlayers: form['max-players'].value,
       // 필요시 추가 필드
     };
 

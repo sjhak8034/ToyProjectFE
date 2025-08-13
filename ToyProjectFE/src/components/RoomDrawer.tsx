@@ -1,4 +1,4 @@
-import { use, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import api from "../api/auth";
 import { type RoomListItem } from "../types/room";
 
@@ -43,7 +43,7 @@ export default function RoomDrawer() {
                     </span>
                     {/* Sidebar content here */}
                     {roomList.map((room) => (
-                        <li key={room.roomId}>
+                        <li key={room.roomId} onClick={() => window.location.href = `/rooms/${room.roomId}`} className="cursor-pointer">
                             <a>{room.roomName}</a>
                         </li>
                     ))}
