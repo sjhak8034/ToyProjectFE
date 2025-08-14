@@ -17,7 +17,7 @@ export default function Example() {
 
   const handleGoogleLogin = async () => {
     try{
-      window.location.href = 'http://localhost:3000/oauth2/authorization/google';
+      window.location.href = import.meta.env.VITE_API_URL + '/oauth2/authorization/google';
     } catch (error) {
       console.error("구글 로그인 실패:", error);
       alert("구글 로그인에 실패했습니다. 다시 시도해주세요.");

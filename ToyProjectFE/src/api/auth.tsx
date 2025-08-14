@@ -63,51 +63,6 @@ export const login = async (
   }
 };
 
-// google login api
-export const googleLogin = async (): Promise<TokenResponse> => {
-  try {
-    // 로그인 API 호출
-    const response: AxiosResponse = await api.post("/auth/oauth2-login");
-
-    // Authorization 헤더에서 토큰 가져오기
-    const token = getCookie("access_token");
-
-    if (token) {
-      // JWT 토큰의 payload를 분리 (디코딩)
-      const payload = token.split(".")[1];
-
-      // Payload 디코딩 예시 (base64 디코딩 필요)
-      const decodedPayload = JSON.parse(atob(payload));
-
-      console.log("Decoded Payload: ", decodedPayload);
-
-      console.log("로그인 성공 : ", token);
-      alert("로그인 성공!");
-      window.location.href = "/";
-      // 사용자 역할에 따른 페이지 이동 처
-      // navigate("/dashboard"); // 예시로 대시보드로 이동
-    } else {
-      console.error("쿠키에 access_token이 없습니다.");
-    }
-
-    return response.data;
-  } catch (error: unknown) {
-    // 에러 처리
-    if (axios.isAxiosError(error)) {
-      // 서버가 응답을 반환한 경우 (Validation 오류 포함)
-      if (error.response) {
-        console.error("Validation error:", error.response.data);
-        throw error.response.data; // 필요시 상위 컴포넌트로 전달
-      } else {
-        console.error("No response from server.");
-      }
-    } else {
-      console.error("Unexpected error:", error);
-    }
-    throw error;
-  }
-};
-
 
 // logout api
 export const logout = async (
