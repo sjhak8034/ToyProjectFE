@@ -325,7 +325,7 @@ const myChat = (chat: ChatLogResponse) => (
             {chat.senderNickname}
             <time className="text-xs opacity-50">{formatDate(chat.createdAt)}</time>
         </div>
-        <div className="chat-bubble">{chat.message}</div>
+        <div style={{ whiteSpace: 'pre-line' }} className="chat-bubble">{chat.message}</div>
     </div>
 );
 
@@ -343,6 +343,6 @@ const otherChat = (chat: ChatLogResponse) => (
             {chat.senderNickname}
             <time className="text-xs opacity-50">{formatDate(chat.createdAt)}</time>
         </div>
-        <div className="chat-bubble">{chat.message}</div>
+        <div style={{ whiteSpace: 'pre-line' }} className="chat-bubble">{chat.message}</div>
     </div>
 );
